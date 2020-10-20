@@ -31,7 +31,7 @@ public class UserBean implements Serializable {
 	}
 
 
-//	 !!!!!!  the reason we create this is because this BEAN connect to DAO. !!!!!!!
+//	 !!!!!!  the reason we create this is because this BEAN can be used at DAO. !!!!!!!
 
 
 

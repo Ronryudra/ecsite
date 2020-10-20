@@ -113,20 +113,20 @@ public class SearchServlet extends HttpServlet {
 			   plist = pd.product();
 
 
-           }if(!name.equals("") && id ==0) {
+           }else if(!name.equals("") && id ==0) {
 
 	    	   plist = pd.product(name);
 
 
-	       }if(name.equals("") && id !=0) {
+	       }else if(name.equals("") && id !=0) {
 
 	    	   plist = pd.product(id);
 
-	       }if(!name.equals("") && id !=0){
+	       }else if(!name.equals("") && id !=0){
 
 	    	   plist = pd.product(name,id);
 
-	       }if( plist.size() == 0){
+	       }else if( plist.size() == 0){
 
 	    	   request.setAttribute("error", "There is no product");
 

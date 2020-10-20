@@ -94,4 +94,4 @@ public class SalesDao {
 
 
 
-//if you wanna have result you gotta use RS
+//if you wanna have results you gotta use RS

@@ -20,8 +20,43 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+
+body{
+
+background-image: url(images/white.jpg);
+background-size: cover;
+}
+
+.a{
+position: absolute;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 50%;
+}
+
+</style>
+
 </head>
+
+<form name ="Logout" method="POST" action="http://localhost:8080/ECsite/logout">
+
+<table>
+
+<div class="logout">
+<input type="submit" value="Logout">
+</div>
+
+</table>
+
+
+</form>
+
+
 <body>
+
+<div class="a">
 
 <h1>Are you sure you buy?</h1>
 
@@ -71,12 +106,14 @@
 
  </table>
 
-<form action="http://localhost:8080/ECsite/" method="POST">
+<form action="http://localhost:8080/ECsite/confirmation" method="POST">
 <input type="submit" value="Yes">
 
 <input type="submit" value="No">
 
 </form>
+
+</div>
 
 </body>
 </html>

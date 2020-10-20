@@ -20,9 +20,6 @@ public class ProductDao {
 
 
 
-
-
-
 		String url = "jdbc:mysql://localhost/art";
 		String id = "root";
 		String pass = "password";
@@ -84,13 +81,6 @@ public class ProductDao {
 
 
 
-
-
-
-
-
-
-
 			} catch (SQLException ex) {
 				ex.printStackTrace();
 			}finally {
@@ -117,9 +107,6 @@ public class ProductDao {
 	public ArrayList<ProductBean> product(int catid) {
 
 		ArrayList<ProductBean> pb = new ArrayList<ProductBean>();
-
-
-
 
 
 
@@ -181,11 +168,6 @@ public class ProductDao {
 					 pb.add(p);
 
 					 }
-
-
-
-
-
 
 
 
@@ -303,7 +285,7 @@ public class ProductDao {
 
 
 
-	public ArrayList<ProductBean> product(String je, int suis) {
+	public ArrayList<ProductBean> product(String name, int catid) {
 
 		ArrayList<ProductBean> pb = new ArrayList<ProductBean>();
 
@@ -351,8 +333,8 @@ public class ProductDao {
 				String query = "select * from product where cat_id=? and pro_name like? ";
 				pstmt = conn.prepareStatement(query);
 
-				pstmt.setInt(1,suis);
-				pstmt.setString(2,"%"+je+"%");
+				pstmt.setInt(1,catid);
+				pstmt.setString(2,"%"+name+"%");
 
 
 
@@ -373,11 +355,6 @@ public class ProductDao {
 					 pb.add(p);
 
 					 }
-
-
-
-
-
 
 
 
@@ -493,12 +470,6 @@ public class ProductDao {
 
 
 
-
-
-
-
-
-
 			} catch (SQLException ex) {
 				ex.printStackTrace();
 			}finally {
@@ -566,6 +537,7 @@ public class ProductDao {
 				pstmt = conn.prepareStatement(query);
 
 
+
 				pstmt.setInt(1,procode);
 
 
@@ -573,7 +545,85 @@ public class ProductDao {
 
 				rs.next();
 
+
 				stock = rs.getInt("stock_no");
+
+
+//               you got stock_no under the condition of pro_cd, which pro_cd isn't definde before choosing product
+
+
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}finally {
+				try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null) conn.close();
+
+				}catch(Exception ex) {}
+
+			}
+
+
+
+		return stock;
+	}
+
+
+
+
+	public void change (int change, int consequence) {
+
+
+
+
+		String url = "jdbc:mysql://localhost/art";
+		String id = "root";
+		String pass = "password";
+	    Connection conn = null;
+
+
+
+
+
+	    ResultSet rs = null;
+
+
+
+	    PreparedStatement pstmt= null;
+
+
+
+
+
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+
+				} catch (ClassNotFoundException ex) {
+				ex.printStackTrace();
+				}
+
+
+
+
+			try {
+
+
+				conn = DriverManager.getConnection(url,id,pass);
+
+
+
+				String query = "update product set stock_no = ? where pro_cd = ?";
+				pstmt = conn.prepareStatement(query);
+
+
+				pstmt.setInt(1, change);
+				pstmt.setInt(2, consequence);
+
+//                how many could you update  i mean recode
+
+				pstmt.executeUpdate();
+
 
 
 
@@ -593,8 +643,9 @@ public class ProductDao {
 
 
 
-		return stock;
+//		we don't need anythig from this dao
 	}
+
 
 
 

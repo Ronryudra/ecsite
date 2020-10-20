@@ -44,7 +44,7 @@ public class CategoryDao {
 
 
 
-//		!!!!!!!!!every time you come here, it means you gotta put database information into each bean!!!
+//	 !!!!!every time you come here, it means you gotta put database information into each bean!!!
 
 		while (rs.next()) {
 
@@ -91,7 +91,7 @@ public class CategoryDao {
 
 
 
-	public CategoryBean getname (int je) {
+	public CategoryBean getname (int getname) {
 
 		String url = "jdbc:mysql://localhost/art";
 		String id = "root";
@@ -119,7 +119,7 @@ public class CategoryDao {
 
 			String query = "select * from category where cat_id = ?";
 			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1,je);
+			pstmt.setInt(1,getname);
 
 			rs = pstmt.executeQuery();
 
@@ -154,26 +154,6 @@ public class CategoryDao {
 
 		return cb;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -6,9 +6,8 @@
 
 
     <% CategoryBean categorybean = new CategoryBean(); %>
-    <% ArrayList<CategoryBean> clist = new ArrayList<CategoryBean>();%>
+    <% ArrayList<CategoryBean> clist = (ArrayList<CategoryBean>) session.getAttribute("getcategory");%>
 
-    <% clist =(ArrayList<CategoryBean>) session.getAttribute("getcategory"); %>
 
 
     <% ProductBean productbean = new ProductBean(); %>
@@ -27,9 +26,59 @@
 
 <style>
 
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.logout{
+position: absolute;
+bottom: 0;
+right: 0;
+}
+
+.navbar{
+display: flex;
+align-items: center;
+padding: 25px;
+}
+
+nav{
+flex: 1;
+text-align: right;
+}
+
+nav ul{
+display: inline-block;
+list-style-type: none;
+}
+
+nav ul li{
+display: inline-block;
+margin-right: 20px;
+
+}
+
+nav ul li a{
+
+color: orange;
+text-decoration: none;
+
+}
+
+.container{
+max-width: 1300px;
+margin: auto;
+padding-right: 25px;
+padding-left: 25px;
+}
+
 
 body{
-background: #edf2fa;
+backgroue: url(images/white.jpg);
+background-size: cover;
+background: #ebfaef;
 }
 
 
@@ -58,17 +107,66 @@ outline: none;
 box-shadow: 10px 10px 25px 0 rgba(0,0,0, .1);
 }
 
+
 </style>
 </head>
+
+<header>
+<div class="container">
+
+   <div class="navbar">
+
+    <div class="logo">
+    <img src="images/2.svg" width="100px">
+    </div>
+
+    <nav>
+
+      <ul>
+
+       <li><a href="">Home</a></li>
+       <li><a href="">Products</a></li>
+       <li><a href="">About</a></li>
+       <li><a href="">Contact</a></li>
+       <li><a href="">Account</a></li>
+
+
+      </ul>
+    </nav>
+
+
+
+
+
+
+
+    </div>
+   </div>
+
+</header>
+
+
 <body>
 
 
 
 <div class="container">
 
+<form name ="Logout"  action="http://localhost:8080/ECsite/logout" method="POST">
+
+<table>
+
+<div class="logout">
+<input type="submit" value="Logout">
+</div>
+
+</table>
+
+
+</form>
+
   <div class="subcontainer">
 
-   <h1>Search</h1>
 
     <div class="search">
 
@@ -164,6 +262,8 @@ box-shadow: 10px 10px 25px 0 rgba(0,0,0, .1);
 
 
 
-
 </body>
+
+
+
 </html>

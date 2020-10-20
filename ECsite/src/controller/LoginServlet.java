@@ -56,6 +56,8 @@ public class LoginServlet extends HttpServlet {
 
 
 
+
+
 		if (name.equals("") || password.equals("")) {
 
 			request.setAttribute("error", "Type your name and password ");

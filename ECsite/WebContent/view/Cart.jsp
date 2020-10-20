@@ -20,8 +20,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+body{
+background-image: url(images/white.jpg);
+background-size: cover;
+
+}
+
+.container{
+text-align: center;
+}
+</style>
+
+
 </head>
 <body>
+
+<div class="container">
+
+<form name ="Logout" method="POST" action="http://localhost:8080/ECsite/logout">
+
+<table>
+
+
+<div class="logout">
+<input type="submit" value="Logout">
+</div>
+
+</table>
+
+
+</form>
 
 
 
@@ -77,6 +107,8 @@
 <input type="submit" value="Purchase">
 
 </form>
+
+</div>
 
 </body>
 </html>

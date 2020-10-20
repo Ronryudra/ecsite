@@ -5,13 +5,12 @@
 
 
 
-    <% ProductBean productbean = new ProductBean(); %>
-
-    <% productbean = (ProductBean)request.getAttribute("product"); %>
+    <% ProductBean productbean = (ProductBean)request.getAttribute("product"); %>
 
 
-    <% CategoryBean categorybean = new CategoryBean(); %>
-    <% categorybean = (CategoryBean) request.getAttribute("Category");%>
+
+    <% CategoryBean categorybean = (CategoryBean) request.getAttribute("Category"); %>
+
 
 
 <!DOCTYPE html>
@@ -22,8 +21,23 @@
 
 <style>
 
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.logout{
+position: absolute;
+bottom: 0;
+right: 0;
+}
+
 body{
-background-color: #ebeff0;
+
+background-image: url(images/white.jpg);
+background-size: cover;
 }
 
 .a{
@@ -35,16 +49,34 @@ margin: 0 auto;
 }
 
 img{
-height: 500px;
-width: 500px;
+height: 450px;
+width: 450px;
 
 padding: 10px;
 }
 
-.
+
 </style>
 </head>
+
+
+
 <body>
+
+
+
+<form name ="Logout"  action="http://localhost:8080/ECsite/logout" method="POST">
+
+<table>
+
+<div class="logout">
+<input type="submit" value="Logout">
+</div>
+
+</table>
+
+
+</form>
 
 <div class="a">
 
@@ -93,14 +125,7 @@ Stock
 
 
 
-
-
 </div>
-
-
-
-
-
 
 
 
