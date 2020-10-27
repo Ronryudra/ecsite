@@ -86,4 +86,15 @@ public class MakeAccountServlet extends HttpServlet {
 
 	}
 
+
+	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    	// TODO 自動生成されたメソッド・スタブ
+
+		 RequestDispatcher dispatcher = request.getRequestDispatcher("/view/MakeAccount.jsp");
+
+			dispatcher.forward(request, response);
+			return;
+
+	 }
+
 }

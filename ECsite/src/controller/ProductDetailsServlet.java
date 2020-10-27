@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,8 +70,7 @@ public class ProductDetailsServlet extends HttpServlet {
 		session.setAttribute("cartlist", cartlist);
 
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/Cart.jsp");
-		dispatcher.forward(request, response);
+		response.sendRedirect("/ECsite/view/Cart.jsp");
 
 
 		return;

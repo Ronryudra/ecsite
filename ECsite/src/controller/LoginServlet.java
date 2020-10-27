@@ -130,4 +130,13 @@ public class LoginServlet extends HttpServlet {
 		}
 	}
 
+	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    	// TODO 自動生成されたメソッド・スタブ
+
+		 RequestDispatcher dispatcher = request.getRequestDispatcher("/view/Login.jsp");
+
+			dispatcher.forward(request, response);
+			return;
+
+	 }
 }

@@ -75,6 +75,11 @@ public class ConfirmationServlet extends HttpServlet {
 
 
 		}
+		session.removeAttribute("cartlist");
+
+
+
+
 
 
 

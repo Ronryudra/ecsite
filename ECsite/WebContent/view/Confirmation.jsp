@@ -109,6 +109,9 @@ left: 50%;
 <form action="http://localhost:8080/ECsite/confirmation" method="POST">
 <input type="submit" value="Yes">
 
+</form>
+
+<form action="http://localhost:8080/ECsite/back" method="POST">
 <input type="submit" value="No">
 
 </form>

@@ -31,6 +31,12 @@ background: #191919;
 box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 }
 
+.box2{
+position: absolute;
+top: 350px;
+left: 300px;
+}
+
 
 
 .box h1{
@@ -73,6 +79,16 @@ border-radius: 24px;
 
 
 </form>
+
+<form class="box2" action="http://localhost:8080/ECsite/makeaccount" method="GET">
+
+<input type="submit" name="" value="Make account">
+
+
+</form>
+
+
+
 
 </body>
 </html>
